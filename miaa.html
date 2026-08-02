@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Miaaexchange Services - Instant cryptocurrency exchange with mining rewards, bonuses, and 24/7 support.">
+  <title>Miaaexchange Services | Instant Crypto Exchange & Mining</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      /* full background cover with the provided image */
+      background: url('https://i.imgur.com/7E2OmcV.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      padding-bottom: 80px;
+      text-align: center;
+      font-size: 18px;
+      min-height: 100vh;
+    }
+    /* semi-transparent overlay to keep text readable, matches original light feel */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 248, 240, 0.65);
+      z-index: -1;
+      backdrop-filter: blur(2px);
+    }
+    .how-it-works-section .text-block,
+    .contact-form,
+    .testimonial-box,
+    .contact-item,
+    .field-group,
+    .signin-popup,
+    .policy-popup {
+      text-align: left;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #f58025;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      z-index: 5;
+      text-align: center;
+    }
+    .nav-logo img {
+      height: 42px;
+      width: auto;
+      display: block;
+      transition: transform 0.2s;
+      filter: brightness(1.05);
+      margin: 0 auto;
+    }
+    .nav-logo img:hover {
+      transform: scale(1.02);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+    nav a {
+      color: #111;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+      letter-spacing: 0.3px;
+      font-size: 18px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #f58025;
+    }
+    .signin-nav-btn {
+      background: #f58025;
+      color: #fff !important;
+      padding: 6px 18px;
+      border-radius: 40px;
+      border: none;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      margin-left: 8px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(245, 128, 37, 0.25);
+    }
+    .signin-nav-btn:hover {
+      background: #d96b1a;
+      transform: scale(1.03);
+      text-decoration: none;
+      color: #fff !important;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: transparent;
+      border-bottom: 2px solid #f58025;
+    }
+    header h1 {
+      font-size: 30px;
+      color: #111;
+      letter-spacing: 2px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    header h1 span {
+      color: #f58025;
+    }
+    .message-block {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+      padding: 0 12px;
+    }
+    .message-block p {
+      color: #111;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    .message-block p:last-child {
+      margin-bottom: 0;
+    }
+    .message-block p strong {
+      color: #f58025;
+    }
+    .office-showcase {
+      max-width: 900px;
+      margin: 40px auto 50px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.10);
+      background: #fff;
+      border: 2px solid #f58025;
+    }
+    .office-showcase img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== HOW IT WORKS - FLAT TEXT, NO BORDER ===== */
+    .how-it-works-section {
+      max-width: 800px;
+      margin: 10px auto 50px;
+      padding: 0 15px;
+    }
+    /* ALL text inside how-it-works gets 18px */
+    .how-it-works-section .text-block,
+    .how-it-works-section .text-block p,
+    .how-it-works-section .text-block li,
+    .how-it-works-section .text-block ul,
+    .how-it-works-section .text-block .bonus-grid span,
+    .how-it-works-section .text-block .highlight-box p,
+    .how-it-works-section .text-block em,
+    .how-it-works-section .text-block strong,
+    .how-it-works-section .text-block .vendor-btn {
+      font-size: 18px !important;
+      line-height: 1.9;
+    }
+    .how-it-works-section .text-block {
+      background: #ffffff;
+      padding: 32px 35px 35px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-bottom: 35px;
+      text-align: left;
+      transition: box-shadow 0.2s;
+      border: none;
+    }
+    .how-it-works-section .text-block:last-child {
+      margin-bottom: 0;
+    }
+    .how-it-works-section .text-block p {
+      margin-bottom: 20px;
+      color: #111;
+    }
+    .how-it-works-section .text-block p:last-child {
+      margin-bottom: 0;
+    }
+    .how-it-works-section .text-block strong {
+      color: #f58025;
+    }
+    .how-it-works-section .text-block .vendor-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      margin: 18px 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+    .how-it-works-section .text-block .vendor-list li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+    }
+    .how-it-works-section .text-block .vendor-btn {
+      display: inline-block;
+      background: #ffffff;
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #111;
+      border: 2px solid #f58025;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      letter-spacing: 0.3px;
+    }
+    .how-it-works-section .text-block .vendor-btn:hover {
+      background: #f58025;
+      color: #ffffff;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 14px rgba(245, 128, 37, 0.35);
+      border-color: #d96b1a;
+    }
+    .how-it-works-section .text-block .vendor-btn:active {
+      transform: scale(0.96);
+    }
+    .how-it-works-section .text-block .bonus-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      background: #faf7f2;
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin: 16px 0 20px;
+      border: 1px solid #f0e8dd;
+    }
+    .how-it-works-section .text-block .bonus-grid span {
+      color: #111;
+      line-height: 1.7;
+    }
+    .how-it-works-section .text-block .bonus-grid strong {
+      color: #f58025;
+      font-weight: 700;
+    }
+    .how-it-works-section .text-block .highlight-box {
+      background: #fcf9f5;
+      padding: 20px 24px;
+      border-radius: 14px;
+      margin: 20px 0 16px;
+      border: 1px solid #f0e8dd;
+    }
+    .how-it-works-section .text-block .highlight-box p {
+      margin-bottom: 8px;
+    }
+    .how-it-works-section .text-block .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    .how-it-works-section .text-block ul {
+      margin: 10px 0 14px;
+      padding-left: 20px;
+    }
+    .how-it-works-section .text-block ul li {
+      padding: 5px 0;
+      line-height: 1.7;
+      color: #111;
+    }
+    .how-it-works-section .text-block ul li::marker {
+      color: #f58025;
+    }
+    .how-it-works-section .text-block .step-divider {
+      height: 1px;
+      background: #e8e4df;
+      margin: 28px 0 30px;
+    }
+
+    .army-green-bg {
+      background: #ffffff;
+      padding: 30px 35px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 30px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      color: #111;
+      border-left: none;
+      border: none;
+    }
+    .army-green-bg p {
+      margin-bottom: 14px;
+      line-height: 1.8;
+      font-size: 18px;
+      color: #111;
+    }
+    .army-green-bg strong {
+      color: #f58025;
+    }
+    .army-green-standout {
+      background: #ffffff;
+      padding: 30px 35px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: 30px auto;
+      border-left: none;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .army-green-standout h2 {
+      color: #f58025;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+    .army-green-standout ul {
+      list-style: none;
+      padding: 0;
+    }
+    .army-green-standout ul li {
+      color: #111;
+      margin: 14px 0;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+    .army-green-standout ul li::before {
+      content: "▹ ";
+      color: #f58025;
+      font-weight: bold;
+    }
+    .black-message-section {
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 35px auto;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border-top: none;
+      border: none;
+    }
+    .black-message-section h2 {
+      color: #f58025;
+      font-size: 26px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 2px solid #f58025;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+    .black-message-section ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .black-message-section ul li {
+      color: #111;
+      font-size: 18px;
+      margin: 14px 0;
+      line-height: 1.5;
+      background: rgba(245, 128, 37, 0.08);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      font-weight: 500;
+      border: 1px solid #f58025;
+    }
+    .army-green-commitment {
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 35px auto;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      border-bottom: none;
+      border: none;
+    }
+    .army-green-commitment h2 {
+      color: #f58025;
+      font-size: 26px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 2px solid #f58025;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+    .army-green-commitment ul {
+      list-style: none;
+      padding: 0;
+    }
+    .army-green-commitment ul li {
+      color: #111;
+      font-size: 18px;
+      margin: 14px 0;
+      line-height: 1.6;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      display: block;
+    }
+    .army-green-commitment ul li::before {
+      content: "✔ ";
+      color: #f58025;
+      font-weight: bold;
+    }
+    .exchange-btn-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px auto 55px auto;
+    }
+    .exchange-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #f58025, #d96b1a);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(245, 128, 37, 0.4);
+      border: 2px solid #ffffff;
+    }
+    .exchange-btn:hover {
+      background: linear-gradient(135deg, #d96b1a, #f58025);
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(245, 128, 37, 0.6);
+    }
+    .partners {
+      text-align: center;
+      background: #f5f0e8;
+      padding: 40px 30px;
+      margin-top: 60px;
+      border-top: 4px solid #f58025;
+      border-bottom: 4px solid #f58025;
+    }
+    .partners h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #111;
+    }
+    .partners img {
+      filter: grayscale(100%);
+      margin: 0 15px;
+      width: 70px;
+      vertical-align: middle;
+      opacity: 0.9;
+      transition: 0.2s;
+    }
+    .partners img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    .profits-dashboard {
+      max-width: 1300px;
+      margin: 60px auto 50px;
+      padding: 35px 30px;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      border: 2px solid #f58025;
+    }
+    .profits-dashboard h2 {
+      font-size: 32px;
+      color: #111;
+      margin-bottom: 12px;
+    }
+    .profits-dashboard h2 span {
+      color: #f58025;
+    }
+    .charts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .chart-card {
+      flex: 1;
+      min-width: 280px;
+      background: #faf8f5;
+      border-radius: 20px;
+      padding: 22px 20px 28px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+      border: 1px solid #f58025;
+    }
+    .chart-card h3 {
+      color: #111;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+    canvas {
+      max-height: 340px;
+      width: 100%;
+      margin: 12px 0;
+    }
+    .weekly-stats {
+      margin-top: 22px;
+      font-size: 18px;
+      color: #111;
+      background: #f0ebe3;
+      padding: 12px 16px;
+      border-radius: 32px;
+      border: 1px solid #f58025;
+    }
+    .testimonials {
+      max-width: 1200px;
+      margin: 60px auto;
+      text-align: center;
+      background: #ffffff;
+      padding: 45px 35px;
+      border-radius: 10px;
+      border: 2px solid #f58025;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+    .testimonials h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #f58025;
+    }
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 15px 0 35px;
+    }
+    .carousel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slides {
+      width: 85%;
+      margin: 0 auto;
+      min-height: 360px;
+    }
+    .carousel-slide {
+      display: none;
+      animation: fadeEffect 0.4s ease;
+    }
+    .carousel-slide.active {
+      display: block;
+    }
+    .testimonial-box {
+      background: #f8f6f2;
+      padding: 30px 28px;
+      border-radius: 12px;
+      border: 1px solid #f58025;
+      text-align: left;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #111111;
+    }
+    .testimonial-author {
+      font-weight: bold;
+      color: #f58025;
+      font-size: 18px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid rgba(245, 128, 37, 0.3);
+    }
+    .carousel-btn {
+      background: rgba(0, 0, 0, 0.08);
+      border: 2px solid #f58025;
+      color: #111;
+      font-size: 28px;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 12;
+      transition: 0.2s;
+    }
+    .carousel-btn:hover {
+      background: #f58025;
+      color: #fff;
+    }
+    .carousel-prev {
+      left: 5px;
+    }
+    .carousel-next {
+      right: 5px;
+    }
+    .carousel-dots {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .dot.active-dot {
+      background-color: #f58025;
+      transform: scale(1.2);
+    }
+    @keyframes fadeEffect {
+      from {
+        opacity: 0.4;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .contact-section {
+      max-width: 750px;
+      margin: 50px auto 40px;
+      padding: 32px 28px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      border: 2px solid #f58025;
+    }
+    .contact-section h2 {
+      color: #111;
+      margin-bottom: 25px;
+      font-size: 28px;
+    }
+    .contact-card {
+      background: #faf8f5;
+      border-radius: 20px;
+      padding: 22px 24px;
+      border: 1px solid #f58025;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #f0e8dd;
+      text-align: left;
+    }
+    .contact-icon {
+      font-size: 28px;
+      min-width: 46px;
+      text-align: center;
+    }
+    .contact-details strong {
+      font-size: 18px;
+      color: #f58025;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .contact-details span {
+      font-size: 18px;
+      color: #111111;
+      word-break: break-word;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .contact-form {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      color: #111;
+      margin: 16px 0 5px;
+      font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 30px;
+      border: 1px solid #d0c8bc;
+      font-size: 18px;
+      transition: 0.2s;
+      background: #ffffff;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #f58025;
+      box-shadow: 0 0 0 3px rgba(245, 128, 37, 0.2);
+    }
+    .contact-form textarea {
+      min-height: 100px;
+      border-radius: 20px;
+      resize: vertical;
+    }
+    .contact-form .form-btn {
+      margin-top: 22px;
+      background: #f58025;
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 2px solid #fff;
+      box-shadow: 0 4px 12px rgba(245, 128, 37, 0.3);
+    }
+    .contact-form .form-btn:hover {
+      background: #d96b1a;
+      transform: scale(1.02);
+    }
+    .certificate-wrapper {
+      max-width: 750px;
+      margin: 60px auto 50px;
+      text-align: center;
+    }
+    .certificate-wrapper img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      border: 4px solid #f58025;
+    }
+    .certificate-caption {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 10px;
+      background: #f58025;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 30px;
+    }
+    footer {
+      background: #ffffff;
+      color: #111111;
+      text-align: center;
+      padding: 20px 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 18px;
+      border-top: 3px solid #f58025;
+      z-index: 999;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
+    }
+    .comic-toast-container {
+      position: fixed;
+      bottom: 85px;
+      left: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+      max-width: 380px;
+      width: calc(100% - 40px);
+    }
+    .comic-toast {
+      background: linear-gradient(135deg, #1a2a4a, #0d1b33);
+      background-color: #1a2a4a;
+      color: #ffffff;
+      padding: 12px 14px 12px 16px;
+      border-radius: 24px 18px 24px 18px;
+      font-family: 'Comic Neue', 'Comic Sans MS', 'Arial', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.4;
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.15), 0 4px 14px rgba(0, 0, 0, 0.25);
+      border: 1.5px solid #4a6a9a;
+      backdrop-filter: blur(2px);
+      text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.2px;
+      transform-origin: left bottom;
+      transition: transform 0.2s ease, opacity 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: default;
+      pointer-events: auto;
+      position: relative;
+    }
+    .comic-toast.fade-out {
+      opacity: 0;
+      transform: translateX(-20px) scale(0.92);
+      transition: opacity 0.45s ease, transform 0.4s ease;
+    }
+    .comic-toast.fade-in {
+      animation: comicPopInLeft 0.32s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+    @keyframes comicPopInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-45px) scale(0.75);
+      }
+      70% {
+        transform: translateX(4px) scale(1.02);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+    .toast-icon {
+      font-size: 24px;
+      filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.15));
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      padding: 4px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .toast-message {
+      flex: 1;
+      word-break: break-word;
+      padding-right: 4px;
+      color: #ffffff;
+      font-size: 18px;
+    }
+    .toast-message strong {
+      font-weight: 900;
+      color: #f5c542;
+      text-shadow: 0px 1px 0px #8a6a1a;
+    }
+    .toast-close {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+      font-family: monospace;
+      line-height: 1;
+      padding: 0;
+      margin-left: 4px;
+    }
+    .toast-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.1);
+      color: #ffdd99;
+    }
+    .comic-toast::before {
+      content: "⚡";
+      position: absolute;
+      left: -8px;
+      top: -10px;
+      font-size: 20px;
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
+    }
+    .toast-flag {
+      font-size: 32px;
+      line-height: 1;
+      filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.15));
+      flex-shrink: 0;
+    }
+    .signin-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInOverlay 0.25s ease;
+    }
+    .signin-overlay.active {
+      display: flex;
+    }
+    @keyframes fadeInOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .signin-popup {
+      background: #ffffff;
+      max-width: 420px;
+      width: 92%;
+      padding: 32px 28px 28px;
+      border-radius: 28px;
+      box-shadow: 0 24px 50px rgba(0,0,0,0.25);
+      position: relative;
+      border: 2px solid #f58025;
+      animation: popScale 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+      text-align: center;
+    }
+    @keyframes popScale {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .signin-popup .popup-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 26px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #888;
+      transition: 0.2s;
+      line-height: 1;
+    }
+    .signin-popup .popup-close-btn:hover {
+      color: #f58025;
+      transform: rotate(90deg);
+    }
+    .signin-popup h2 {
+      color: #111;
+      font-size: 26px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .signin-popup h2 span {
+      color: #f58025;
+    }
+    .signin-popup .sub-title {
+      color: #777;
+      font-size: 18px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 16px;
+    }
+    .signin-popup .field-group {
+      text-align: left;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .signin-popup .field-group label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    .signin-popup .field-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 30px;
+      border: 1.5px solid #ddd;
+      font-size: 18px;
+      transition: 0.2s;
+      background: #fafafa;
+    }
+    .signin-popup .field-group input:focus {
+      outline: none;
+      border-color: #f58025;
+      box-shadow: 0 0 0 3px rgba(245, 128, 37, 0.15);
+      background: #fff;
+    }
+    .signin-popup .field-group .error-msg {
+      font-size: 18px;
+      color: #d9534f;
+      margin-top: 6px;
+      display: none;
+      background: #fdf0ed;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #f5c6cb;
+    }
+    .signin-popup .field-group .error-msg.show {
+      display: block;
+    }
+    .signin-popup .popup-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .signin-popup .popup-actions button {
+      padding: 10px 22px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+      min-width: 90px;
+    }
+    .signin-popup .popup-actions .btn-signin {
+      background: #f58025;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(245, 128, 37, 0.3);
+    }
+    .signin-popup .popup-actions .btn-signin:hover {
+      background: #d96b1a;
+      transform: scale(1.03);
+    }
+    .signin-popup .popup-extra {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #999;
+      border-top: 1px solid #eee;
+      padding-top: 18px;
+    }
+    .signin-popup .popup-extra a {
+      color: #f58025;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .signin-popup .popup-extra a:hover {
+      text-decoration: underline;
+    }
+    .policy-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 10001;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInOverlay 0.25s ease;
+    }
+    .policy-overlay.active {
+      display: flex;
+    }
+    .policy-popup {
+      background: #ffffff;
+      max-width: 440px;
+      width: 92%;
+      padding: 32px 28px 28px;
+      border-radius: 28px;
+      box-shadow: 0 24px 50px rgba(0,0,0,0.25);
+      position: relative;
+      border: 2px solid #f58025;
+      animation: popScale 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+      text-align: center;
+    }
+    .policy-popup .policy-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 26px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #888;
+      transition: 0.2s;
+      line-height: 1;
+    }
+    .policy-popup .policy-close-btn:hover {
+      color: #f58025;
+      transform: rotate(90deg);
+    }
+    .policy-popup h2 {
+      color: #111;
+      font-size: 22px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+    .policy-popup h2 span {
+      color: #f58025;
+    }
+    .policy-popup p {
+      color: #333;
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 18px 0 20px;
+    }
+    .policy-popup .policy-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .policy-popup .policy-actions button {
+      padding: 10px 28px;
+      border-radius: 40px;
+      border: none;
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+      min-width: 80px;
+    }
+    .policy-popup .policy-actions .btn-policy-ok {
+      background: #f58025;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(245, 128, 37, 0.3);
+    }
+    .policy-popup .policy-actions .btn-policy-ok:hover {
+      background: #d96b1a;
+      transform: scale(1.03);
+    }
+    .policy-popup .policy-actions .btn-policy-cancel {
+      background: #e0e0e0;
+      color: #333;
+    }
+    .policy-popup .policy-actions .btn-policy-cancel:hover {
+      background: #ccc;
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 480px) {
+      .signin-popup {
+        padding: 26px 18px 22px;
+      }
+      .signin-popup .popup-actions button {
+        min-width: 70px;
+        font-size: 18px;
+        padding: 8px 14px;
+      }
+      .policy-popup {
+        padding: 26px 18px 22px;
+      }
+    }
+    @media (max-width: 768px) {
+      .carousel-slides {
+        width: 92%;
+      }
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+      }
+      .exchange-btn {
+        font-size: 20px;
+        padding: 14px 28px;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+      .message-block {
+        margin: 25px 15px;
+      }
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      nav a {
+        margin: 0 10px;
+      }
+      .signin-nav-btn {
+        margin-left: 4px;
+        padding: 5px 14px;
+        font-size: 18px;
+      }
+      .how-it-works-section .text-block {
+        padding: 24px 20px 26px;
+      }
+      .army-green-standout, .army-green-bg, .black-message-section, .army-green-commitment {
+        padding: 22px 20px;
+        margin: 25px 15px;
+      }
+    }
+    @media (max-width: 480px) {
+      .nav-links a {
+        margin: 0 8px;
+        font-size: 18px;
+      }
+      .nav-logo img {
+        height: 36px;
+      }
+      .signin-nav-btn {
+        font-size: 18px;
+        padding: 4px 12px;
+      }
+      .how-it-works-section .text-block {
+        padding: 20px 16px 22px;
+      }
+    }
+    .gap-section {
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+    .gap-top {
+      margin-top: 70px;
+    }
+    .gap-bottom {
+      margin-bottom: 70px;
+    }
+    .gap-top-sm {
+      margin-top: 50px;
+    }
+    .gap-bottom-sm {
+      margin-bottom: 50px;
+    }
+    header .how-it-works-section {
+      margin-top: 10px;
+    }
+    .black-message-section {
+      margin-top: 60px;
+    }
+    .army-green-commitment {
+      margin-top: 60px;
+    }
+    .army-green-standout {
+      margin-top: 60px;
+    }
+    .exchange-btn-container {
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
+    .profits-dashboard {
+      margin-top: 80px;
+      margin-bottom: 70px;
+    }
+    .partners {
+      margin-top: 80px;
+    }
+    .testimonials {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    .certificate-wrapper {
+      margin-top: 80px;
+      margin-bottom: 70px;
+    }
+    .contact-section {
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo"><img src="https://i.imgur.com/sMYOrmT.jpeg" alt="Miaaexchange Services Logo"></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="exchange.html">Exchange</a>
+      <a href="bitcoin_mining.html">Bitcoin Mining</a>
+      <a href="faq.html">Faq</a>
+      <a href="#certificate-section">Contact Us</a>
+      <button class="signin-nav-btn" id="signinNavBtn">Sign In</button>
+    </div>
+  </nav>
+
+  <!-- SIGN-IN POPUP (overlay) -->
+  <div class="signin-overlay" id="signinOverlay">
+    <div class="signin-popup">
+      <button class="popup-close-btn" id="popupCloseBtn">✕</button>
+      <h2>Welcome <span>Back</span></h2>
+      <div class="sub-title">Sign in to your account</div>
+      <div class="field-group">
+        <label for="popupUsername">Username</label>
+        <input type="text" id="popupUsername" placeholder="Enter username">
+        <div class="error-msg" id="usernameError">Wrong username, enter correctly and try again.</div>
+      </div>
+      <div class="field-group">
+        <label for="popupPassword">Password</label>
+        <input type="password" id="popupPassword" placeholder="Enter password">
+        <div class="error-msg" id="passwordError">Wrong password, enter correctly and try again.</div>
+      </div>
+      <div class="popup-actions">
+        <button class="btn-signin" id="popupSigninBtn">Sign In</button>
+      </div>
+      <div class="popup-extra">
+        <a id="forgotPasswordLink">Forgot password?</a> &middot; <a id="joinFreeLink">New here? Join free</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POLICY POPUP (for forgot password / join free) -->
+  <div class="policy-overlay" id="policyOverlay">
+    <div class="policy-popup">
+      <button class="policy-close-btn" id="policyCloseBtn">✕</button>
+      <h2>Security <span>Policy</span></h2>
+      <p>As per our new security policy, we now handle your request manually. Please make your request through the contact form. Thank you.</p>
+      <div class="policy-actions">
+        <button class="btn-policy-ok" id="policyOkBtn">OK</button>
+        <button class="btn-policy-cancel" id="policyCancelBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <h1>MIAAEXCHANGE <span>SERVICES</span></h1>
+    <div class="message-block">
+      <p>At <strong>miaaexchange services</strong>, earning through cryptocurrency is simple, fast, and seamless. Our platform processes transactions instantly, with profits credited to your account in less than five minutes.</p>
+      <p>Unlike many platforms that keep users waiting for days or even weeks, we are committed to delivering quick, smooth, and dependable payouts every time.</p>
+      <p>This dedication to speed, reliability, and efficiency is why miaaexchange services is recognized among the world's leading e-currency exchange platforms.</p>
+    </div>
+    <div class="office-showcase"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format" alt="Happy diverse team collaborating" loading="lazy"></div>
+
+    <!-- ========== HOW IT WORKS – FLAT TEXT NO BORDER ========== -->
+    <h2 style="color:#111; margin-top: 20px; margin-bottom: 20px; font-size: 28px;">How It Works</h2>
+    <div class="how-it-works-section">
+
+      <div class="text-block">
+        <p><strong>Step 1: Create Your E-Currency Accounts</strong><br>
+        To get started, you'll need to open two e-currency accounts. Choose any of the following:</p>
+        <ul style="list-style:none; padding-left:0; margin:10px 0 6px;">
+          <li><a href="https://atomicwallet.io" target="_blank" rel="noopener noreferrer" style="color:#f58025; text-decoration:none; font-weight:600;">Atomic Wallet</a></li>
+          <li><a href="https://www.exodus.com" target="_blank" rel="noopener noreferrer" style="color:#f58025; text-decoration:none; font-weight:600;">Exodus Wallet</a></li>
+        </ul>
+        <p><em>Get started with Atomic or Exodus — both are secure and widely used.</em></p>
+
+        <div class="step-divider"></div>
+
+        <p><strong>✅ Step 2: Fund One of Your Accounts</strong><br>
+        Ensure one of your e-currency accounts has at least <strong>$52</strong>. While $50 is the minimum required to begin, the extra $2 will cover transaction fees.</p>
+        <p>If your account has no funds, you can fund it using any of these trusted vendors:</p>
+        <ul class="vendor-list">
+          <li><a href="https://www.binance.com" target="_blank" rel="noopener noreferrer" class="vendor-btn">Binance</a></li>
+          <li><a href="https://www.luno.com" target="_blank" rel="noopener noreferrer" class="vendor-btn">Luno</a></li>
+          <li><a href="https://coinatmradar.com" target="_blank" rel="noopener noreferrer" class="vendor-btn">CoinATMRadar</a></li>
+          <li><a href="https://buybitcoinworldwide.com" target="_blank" rel="noopener noreferrer" class="vendor-btn">BuyBitcoinWorldwide</a></li>
+        </ul>
+
+        <div class="step-divider"></div>
+
+        <p><strong>✅ Step 3: Begin Earning with MiaaExchange</strong><br>
+        To start earning, transfer <strong>$50</strong> from your first e-currency account to your second account through our exchange services. Click the exchange button below.</p>
+        <div class="highlight-box">
+          <p><strong>Here's what happens:</strong></p>
+          <p>• For every $50 exchanged, you receive <strong>$62.50</strong> (Exchange rate: $1 USD = $1.25 USD).<br>
+          • You make an instant profit of <strong>$12.50</strong> in seconds.<br>
+          • Now, transfer the $62.50 back to your first account and just like that, you make another <strong>$25</strong> profit under a minute.</p>
+        </div>
+        <p><strong>Repeat to Multiply Your Profits</strong><br>
+        Continue exchanging funds back and forth to multiply your profit quickly. You can repeat this process several times a day to reach your income goals.</p>
+
+        <div class="step-divider"></div>
+
+        <p><strong>BONUS OFFERS FOR LARGER EXCHANGES</strong></p>
+        <div class="bonus-grid">
+          <span><strong>💸 $150–$200</strong> → $50 bonus</span>
+          <span><strong>💸 $250–$300</strong> → $80 bonus</span>
+          <span><strong>💸 $350–$400</strong> → $100 bonus</span>
+          <span><strong>💸 $450–$500</strong> → $150 bonus</span>
+          <span><strong>💸 $1,000–$50,000</strong> → 25% bonus on capital</span>
+        </div>
+        <p><strong>Pro Tip:</strong> Start your first exchange with $150 or more to unlock bigger bonuses and reach your targets faster. This is part of our proven Triple Earning Strategy.</p>
+
+        <div class="step-divider"></div>
+
+        <p><strong>💵 How to Convert Your Profit to Cash</strong><br>
+        When you're ready to cash out:</p>
+        <ul style="list-style:none; padding-left:0; margin:10px 0 6px;">
+          <li>Contact any of the listed Bitcoin vendors</li>
+          <li>Send your funds to the vendor</li>
+          <li>Receive payment in cash or via bank transfer quickly and securely</li>
+        </ul>
+
+        <div class="step-divider"></div>
+
+        <p><strong>Important Reminders</strong></p>
+        <ul style="list-style:none; padding-left:0; margin:10px 0 4px;">
+          <li>The more capital and time you commit, the more you can earn</li>
+          <li>Be consistent, stay focused, and use the exchange process wisely.</li>
+        </ul>
+      </div>
+
+    </div> <!-- /how-it-works-section -->
+
+    <div class="black-message-section">
+      <h2>Why Choose Miaaexchange Services?</h2>
+      <ul><li>No fees — ever</li><li>Instant rewards with every exchange</li><li>Fast & simple process that takes only few minutes</li></ul>
+    </div>
+
+    <div class="army-green-commitment">
+      <h2>Our Commitment</h2>
+      <ul><li>No registration fees</li><li>No hidden charges</li><li>Automatic withdrawals — 100% free</li><li>Global access from any device, anywhere</li></ul>
+    </div>
+
+    <div class="army-green-standout">
+      <h2>Why We Stand Out</h2>
+      <ul><li>Lightning-fast cloud mining across thousands of Bitcoin addresses in minutes</li><li>Simple setup — all you need is your wallet address</li><li>Trusted since 2012 with awards and global recognition</li><li>Earning potential up to $50,000 in just 24 hours</li></ul>
+    </div>
+  </header>
+
+  <div class="exchange-btn-container"><a href="exchange.html" class="exchange-btn">Exchange Now</a></div>
+
+  <section class="profits-dashboard">
+    <h2>Profit <span>Analytics</span></h2>
+    <div class="charts-row">
+      <div class="chart-card"><h3>7-Days Profit</h3><canvas id="weeklyHistogram"></canvas><div class="weekly-stats">Daily earnings $1,200 – $4,950 | Weekly total: $22,150</div></div>
+      <div class="chart-card"><h3>Annual Profit Sources</h3><canvas id="annualPieChart"></canvas><div class="weekly-stats">Total annual profit: $1,340,000 — up to 34% ROI</div></div>
+    </div>
+  </section>
+
+  <section class="partners">
+    <h2>As Seen In</h2>
+    <img src="https://i.imgur.com/T3SJsZZ.png" alt="partner"><img src="https://i.imgur.com/TxWJVFZ.png" alt="partner"><img src="https://i.imgur.com/ZAohvht.png" alt="partner"><img src="https://i.imgur.com/K8osoIc.png" alt="partner">
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-prev">❮</button>
+        <div class="carousel-slides" id="carouselSlides">
+          <div class="carousel-slide active"><div class="testimonial-box"><div class="testimonial-content"><p>"Mighty thanks to Miaaexchange Services for giving me this opportunity. I am a single mother of 2."</p></div><div class="testimonial-author">- Anonymous</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"I first heard about Miaaexchange Services in business news. In less than 24 hours my bitcoin wallet was piling up."</p></div><div class="testimonial-author">- Helen Greg, Poland</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"This auto miner won't stop sending bitcoins into my wallet. Highly recommended."</p></div><div class="testimonial-author">- Dora, Turkey</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Best exchange platform I've ever used. Withdrawals are instant and customer service is top notch."</p></div><div class="testimonial-author">- Michael Chen, Singapore</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"I've doubled my investment in just 2 weeks. This platform is a game changer!"</p></div><div class="testimonial-author">- Sarah Johnson, UK</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Finally a platform that delivers what it promises. Fast, reliable and profitable."</p></div><div class="testimonial-author">- David Miller, Australia</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"The mining rewards are incredible. I've recommended this to all my friends and family."</p></div><div class="testimonial-author">- Lisa Wong, Hong Kong</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"From zero to hero in crypto. Miaaexchange made it possible for me to earn passive income."</p></div><div class="testimonial-author">- Ahmed R., Dubai</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Support team responds within minutes. Very professional and transparent company."</p></div><div class="testimonial-author">- Natalia K., Russia</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"I've tried many exchanges but this one stands out. The bonus offers are generous and real."</p></div><div class="testimonial-author">- James O., Nigeria</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"My profits have grown 300% since joining. Thank you Miaaexchange team!"</p></div><div class="testimonial-author">- Priya S., India</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Fastest payouts in the industry. Never had to wait more than 5 minutes."</p></div><div class="testimonial-author">- Carlos M., Brazil</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"The mining pool integration is brilliant. Every transaction gives me passive income."</p></div><div class="testimonial-author">- Emma W., Canada</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Legit platform with real results. Already cashed out over $10,000 in profits."</p></div><div class="testimonial-author">- Tom B., New Zealand</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Easy to use interface and amazing returns. Highly recommended for beginners."</p></div><div class="testimonial-author">- Maria G., Spain</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"I was skeptical at first but now I'm a believer. This platform actually works!"</p></div><div class="testimonial-author">- Kevin L., South Africa</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Best decision I made in 2024. Passive income has changed my life."</p></div><div class="testimonial-author">- Jasmine T., Malaysia</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Transparent, reliable, and profitable. Everything you want in a crypto platform."</p></div><div class="testimonial-author">- Robert P., Germany</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"The 5-minute payout guarantee is real. I've tested it multiple times."</p></div><div class="testimonial-author">- Fatima Z., Morocco</div></div></div>
+          <div class="carousel-slide"><div class="testimonial-box"><div class="testimonial-content"><p>"Miaaexchange is the future of crypto exchanges. Glad I joined early."</p></div><div class="testimonial-author">- Andre S., France</div></div></div>
+        </div>
+        <button class="carousel-btn carousel-next">❯</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <div id="certificate-section" class="certificate-wrapper">
+    <img src="https://i.imgur.com/ulNgVzq.jpeg" alt="Certificate of incorporation">
+  </div>
+
+  <section id="contact-section" class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-details"><strong>Office Address</strong><span>134 Coolidge Ave, Watertown, MA 02472, USA</span></div></div>
+      <div class="contact-form">
+        <form action="https://splitforms.com/api/submit" method="POST">
+          <input type="hidden" name="access_key" value="5accdf9f28f1422b91a692ffbefa3e0f">
+          <label for="formName">Full Name</label>
+          <input type="text" id="formName" name="name" placeholder="Your full name" required>
+          <label for="formEmail">Email Address</label>
+          <input type="email" id="formEmail" name="email" placeholder="you@example.com" required>
+          <label for="formMessage">Message</label>
+          <textarea id="formMessage" name="message" placeholder="How can we help you?" required></textarea>
+          <input type="checkbox" name="botcheck" style="display:none">
+          <button type="submit" class="form-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>Miaaexchange Services © 2012-2026</footer>
+  <div id="comicToastContainer" class="comic-toast-container"></div>
+
+  <script>
+    (function initCarousel() {
+      const slides = document.querySelectorAll('#carouselSlides .carousel-slide');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      const dotsContainer = document.getElementById('carouselDots');
+      if (!slides.length) return;
+      let currentIndex = 0,
+        autoInterval = null,
+        total = slides.length;
+
+      function createDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+          const dot = document.createElement('span');
+          dot.classList.add('dot');
+          if (i === currentIndex) dot.classList.add('active-dot');
+          dot.addEventListener('click', () => { stopAuto();
+            goToSlide(i);
+            startAuto(); });
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function updateDots() {
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+          i === currentIndex ? dot.classList.add('active-dot') : dot.classList.remove('active-dot');
+        });
+      }
+
+      function goToSlide(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        slides[currentIndex].classList.remove('active');
+        currentIndex = index;
+        slides[currentIndex].classList.add('active');
+        updateDots();
+      }
+
+      function nextSlide() { goToSlide(currentIndex + 1); }
+
+      function prevSlide() { goToSlide(currentIndex - 1); }
+
+      function startAuto() {
+        if (autoInterval) clearInterval(autoInterval);
+        autoInterval = setInterval(nextSlide, 5000);
+      }
+
+      function stopAuto() {
+        if (autoInterval) { clearInterval(autoInterval);
+          autoInterval = null; }
+      }
+      if (nextBtn) nextBtn.addEventListener('click', () => { stopAuto();
+        nextSlide();
+        startAuto(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { stopAuto();
+        prevSlide();
+        startAuto(); });
+      createDots();
+      startAuto();
+      window.addEventListener('beforeunload', () => { if (autoInterval) clearInterval(autoInterval); });
+    })();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const barCtx = document.getElementById('weeklyHistogram')?.getContext('2d');
+      if (barCtx) {
+        new Chart(barCtx, {
+          type: 'bar',
+          data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{ label: 'Daily Profit ($)', data: [1250, 2300, 3100, 2800, 4200, 4950, 3650], backgroundColor: '#f58025', borderColor: '#d96b1a', borderRadius: 8 }]
+          },
+          options: { responsive: true, maintainAspectRatio: true, scales: { y: { beginAtZero: true, ticks: { callback: (val) => '$' + val.toLocaleString() } } } }
+        });
+      }
+      const pieCtx = document.getElementById('annualPieChart')?.getContext('2d');
+      if (pieCtx) {
+        new Chart(pieCtx, {
+          type: 'pie',
+          data: {
+            labels: ['Exchange Revenue', 'Mining Pool', 'Referral Commissions', 'Bonus Payouts'],
+            datasets: [{ data: [560000, 490000, 190000, 100000], backgroundColor: ['#f58025', '#e67e22', '#f39c12', '#d35400'] }]
+          },
+          options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.label}: $${ctx.raw.toLocaleString()}` } } } }
+        });
+      }
+    });
+
+    document.querySelectorAll('a[href="#certificate-section"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#certificate-section')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // ---------- SIGN-IN POPUP CONTROLS ----------
+    (function initSigninPopup() {
+      const overlay = document.getElementById('signinOverlay');
+      const openBtn = document.getElementById('signinNavBtn');
+      const closeBtn = document.getElementById('popupCloseBtn');
+      const signinBtn = document.getElementById('popupSigninBtn');
+      const usernameInput = document.getElementById('popupUsername');
+      const passwordInput = document.getElementById('popupPassword');
+      const usernameError = document.getElementById('usernameError');
+      const passwordError = document.getElementById('passwordError');
+      const forgotLink = document.getElementById('forgotPasswordLink');
+      const joinLink = document.getElementById('joinFreeLink');
+
+      // Predefined credentials: username -> { password, redirect }
+      const credentials = {
+        'tradelord09': { password: 'Lord09@lordtrade@890', redirect: 'tradelord09.html' },
+        'wongb_06': { password: '%8en87J57Ftg', redirect: 'wongb_06.html' },
+        'snowkie_90': { password: 'jFt!%5n^', redirect: 'snowkie_90.html' },
+        'earning_10': { password: '9peWt#7@=Gfp@w-', redirect: 'earning_10.html' },
+        'acces_80': { password: 'b!0dVq14tqmM', redirect: 'acces_80.html' },
+        'snowma_770': { password: 'c!0dVq10tqmM', redirect: 'snowma_770.html' },
+        'delia_005': { password: '@b!0dVq14tqmB', redirect: 'delia_005.html' },
+        'eastgate_08': { password: ',%b!0dVq4tqmM', redirect: 'delia_005.html' },
+        'owen_4': { password: '=fb!0dVq14tqmM', redirect: 'owen_4.html' },
+        'beneath_09': { password: 'q%b!0dVq14tqmQ', redirect: 'beneath_09.html' },
+        'aaudy_03': { password: '1%b!0dVqtqmM@', redirect: 'aaudy_03.html' },
+        'shatters_1': { password: '$1b!0dVq14tqmD', redirect: 'shatters_1.html' }
+      };
+
+      function openPopup() {
+        overlay.classList.add('active');
+        usernameInput.value = '';
+        passwordInput.value = '';
+        usernameError.classList.remove('show');
+        passwordError.classList.remove('show');
+        usernameInput.focus();
+      }
+      function closePopup() {
+        overlay.classList.remove('active');
+        usernameError.classList.remove('show');
+        passwordError.classList.remove('show');
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openPopup);
+      if (closeBtn) closeBtn.addEventListener('click', closePopup);
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closePopup();
+      });
+
+      // Policy popup functions
+      function showPolicyPopup() {
+        document.getElementById('policyOverlay').classList.add('active');
+      }
+      function closePolicyPopup() {
+        document.getElementById('policyOverlay').classList.remove('active');
+      }
+      document.getElementById('policyCloseBtn').addEventListener('click', closePolicyPopup);
+      document.getElementById('policyOkBtn').addEventListener('click', closePolicyPopup);
+      document.getElementById('policyCancelBtn').addEventListener('click', closePolicyPopup);
+      document.getElementById('policyOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closePolicyPopup();
+      });
+
+      if (forgotLink) forgotLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPolicyPopup();
+      });
+      if (joinLink) joinLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPolicyPopup();
+      });
+
+      if (signinBtn) {
+        signinBtn.addEventListener('click', function() {
+          const u = usernameInput.value.trim();
+          const p = passwordInput.value.trim();
+          // Reset errors
+          usernameError.classList.remove('show');
+          passwordError.classList.remove('show');
+
+          if (!u) {
+            usernameError.classList.add('show');
+            return;
+          }
+          if (!p) {
+            passwordError.classList.add('show');
+            return;
+          }
+
+          const lowerU = u.toLowerCase();
+          let matchedUser = null;
+          for (const [key, val] of Object.entries(credentials)) {
+            if (key.toLowerCase() === lowerU) {
+              matchedUser = key;
+              break;
+            }
+          }
+          if (!matchedUser) {
+            usernameError.classList.add('show');
+            return;
+          }
+          const cred = credentials[matchedUser];
+          if (p !== cred.password) {
+            passwordError.classList.add('show');
+            return;
+          }
+          // Valid credentials: redirect
+          window.location.href = cred.redirect;
+        });
+      }
+
+      // Clear errors on input
+      usernameInput.addEventListener('input', function() {
+        usernameError.classList.remove('show');
+      });
+      passwordInput.addEventListener('input', function() {
+        passwordError.classList.remove('show');
+      });
+
+      if (passwordInput) {
+        passwordInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            signinBtn.click();
+          }
+        });
+      }
+    })();
+
+    // comic notification
+    (function comicNotificationSystem() {
+      const container = document.getElementById('comicToastContainer');
+      if (!container) return;
+      const countryFlags = ['🇦🇫', '🇦🇱', '🇩🇿', '🇦🇩', '🇦🇴', '🇦🇬', '🇦🇷', '🇦🇲', '🇦🇺', '🇦🇹', '🇦🇿', '🇧🇸', '🇧🇭', '🇧🇩', '🇧🇧', '🇧🇾', '🇧🇪', '🇧🇿', '🇧🇯', '🇧🇹', '🇧🇴', '🇧🇦', '🇧🇼', '🇧🇷', '🇧🇳', '🇧🇬', '🇧🇫', '🇧🇮', '🇰🇭', '🇨🇲', '🇨🇦', '🇨🇻', '🇨🇫', '🇹🇩', '🇨🇱', '🇨🇳', '🇨🇴', '🇰🇲', '🇨🇬', '🇨🇩', '🇨🇷', '🇭🇷', '🇨🇺', '🇨🇾', '🇨🇿', '🇩🇰', '🇩🇯', '🇩🇲', '🇩🇴', '🇪🇨', '🇪🇬', '🇸🇻', '🇬🇶', '🇪🇷', '🇪🇪', '🇪🇹', '🇫🇯', '🇫🇮', '🇫🇷', '🇬🇦', '🇬🇲', '🇬🇪', '🇩🇪', '🇬🇭', '🇬🇷', '🇬🇩', '🇬🇹', '🇬🇳', '🇬🇾', '🇭🇹', '🇭🇳', '🇭🇺', '🇮🇸', '🇮🇳', '🇮🇩', '🇮🇷', '🇮🇶', '🇮🇪', '🇮🇱', '🇮🇹', '🇯🇲', '🇯🇵', '🇯🇴', '🇰🇿', '🇰🇪', '🇰🇮', '🇰🇵', '🇰🇷', '🇰🇼', '🇰🇬', '🇱🇦', '🇱🇻', '🇱🇧', '🇱🇸', '🇱🇷', '🇱🇾', '🇱🇮', '🇱🇹', '🇱🇺', '🇲🇬', '🇲🇼', '🇲🇾', '🇲🇻', '🇲🇱', '🇲🇹', '🇲🇭', '🇲🇷', '🇲🇺', '🇲🇽', '🇫🇲', '🇲🇩', '🇲🇨', '🇲🇳', '🇲🇪', '🇲🇦', '🇲🇿', '🇲🇲', '🇳🇦', '🇳🇷', '🇳🇵', '🇳🇱', '🇳🇿', '🇳🇮', '🇳🇪', '🇳🇬', '🇳🇴', '🇴🇲', '🇵🇰', '🇵🇼', '🇵🇦', '🇵🇬', '🇵🇾', '🇵🇪', '🇵🇭', '🇵🇱', '🇵🇹', '🇶🇦', '🇷🇴', '🇷🇺', '🇷🇼', '🇰🇳', '🇱🇨', '🇻🇨', '🇼🇸', '🇸🇲', '🇸🇹', '🇸🇦', '🇸🇳', '🇷🇸', '🇸🇨', '🇸🇱', '🇸🇬', '🇸🇰', '🇸🇮', '🇸🇧', '🇸🇴', '🇿🇦', '🇸🇸', '🇪🇸', '🇱🇰', '🇸🇩', '🇸🇷', '🇸🇿', '🇸🇪', '🇨🇭', '🇸🇾', '🇹🇼', '🇹🇯', '🇹🇿', '🇹🇭', '🇹🇱', '🇹🇬', '🇹🇴', '🇹🇹', '🇹🇳', '🇹🇷', '🇹🇲', '🇹🇻', '🇺🇬', '🇺🇦', '🇦🇪', '🇬🇧', '🇺🇸', '🇺🇾', '🇺🇿', '🇻🇺', '🇻🇦', '🇻🇪', '🇻🇳', '🇾🇪', '🇿🇲', '🇿🇼'];
+      const usernames = ['Satoshi_Nakamoto', 'CryptoQueen', 'BlockchainBear', 'BitcoinBaron', 'EthereumElite', 'LitecoinLion', 'RippleRider', 'CardanoCaptain', 'PolkadotPirate', 'ChainlinkChamp', 'StellarStar', 'SolanaSage', 'AvalancheAce', 'MaticMaverick', 'UniswapUnicorn', 'AaveApe', 'CompoundCobra', 'MakerMamba', 'YearnYak', 'SushiSamurai', 'PancakePanda', 'BinanceBoss', 'KrakenKing', 'CoinbaseCowboy', 'GeminiGuru', 'CryptoNova', 'DigitalDoge', 'MoonMiner', 'BlockBandit', 'HashHero', 'LedgerLion', 'TrezorTiger', 'WalletWizard', 'PrivateKeyPanda', 'SeedPhraseSam', 'HODLHawk', 'BullBear', 'WhaleWatcher', 'PumpDump', 'FOMOPhantom', 'DeFiDragon', 'NFTNinja', 'MetaMaskMonkey', 'OpenSeaOwl', 'RaribleRaven', 'AxieAce', 'SandboxSage', 'DecentralandDuke', 'FlowFalcon', 'ThetaTitan', 'CosmosCoder', 'VechainViper', 'IotaIbis', 'TezosTurtle', 'EOSEagle', 'TronTiger', 'NEMNarwhal', 'ZilliqaZebra', 'OntologyOwl', 'QtumQuokka', 'LiskLynx', 'ArkApe', 'StratisStork', 'WavesWhale', 'NEONewt', 'GasGorilla', 'GolemGrizzly', 'SiacoinSloth', 'BATBat', 'EnjinEel', 'KyberKoi', 'LoopringLynx', 'RenRaven', 'KavaKoi', 'ZcashZebra', 'DashDingo', 'MoneroMoose', 'VergeViper', 'PivxPuma', 'ZcoinZebra', 'NexusNarwhal', 'BytecoinBison', 'DogecoinDoge', 'ShibaShiba', 'FlokiFrog', 'SafemoonSalamander', 'PepePanda', 'BonkBat', 'ChilizCheetah', 'GalaGator', 'IlluviumIbex', 'YieldGuildYak', 'MeritCircleMoose', 'FantomFox', 'HarmonyHawk', 'KadenaKoi', 'CasperCat', 'ElrondEel', 'HederaHedgehog', 'AlgorandAlpaca', 'MinaMole', 'CeloCamel', 'NearNarwhal', 'AptosApe', 'SuiSnake', 'SeiSeal', 'InjectiveIbis', 'OasisOwl', 'SecretSquirrel', 'AkashAntelope', 'FetchFox', 'OceanOtter', 'OrionOrca', 'RavenRaccoon', 'WaxWolf', 'ProtonPuma', 'TelosTiger', 'UltraUrial', 'WombatWombat', 'XYMXenopus', 'ZksyncZebra', 'BaseBison', 'BlastBat', 'OptimismOwl', 'ArbitrumApe', 'LineaLion', 'ScrollSwan', 'MantaMole', 'CelestiaCat', 'DymensionDuck', 'FuelFox', 'AvailApe', 'EigenEel', 'EspressoEagle', 'HytopiaHawk', 'NexusNova', 'PrimePanda', 'QuantumQuokka', 'RadiantRaven', 'StarknetShark', 'TaikoTiger', 'UniChainUnicorn', 'VoidViper', 'WormholeWhale', 'XionXerus', 'YieldYak', 'ZoraZebra', 'AcalaApe', 'BobaBear', 'CronosCrab', 'DogeDragon', 'EvmosEel', 'FantomFrog', 'GnosisGorilla', 'InjectiveIbis', 'JunoJaguar', 'KavaKoi', 'LunaLion', 'MaticMoose', 'NeonNarwhal', 'OsmosisOwl', 'PhoenixPanda', 'QuasarQuokka', 'RuneRaven', 'SeiSeal', 'ThorTiger', 'UmeeUrial', 'VegaViper', 'WaxWolf', 'XRPXerus', 'YieldYak', 'ZilliqaZebra', 'AptosApe', 'BlastBat', 'CelestiaCat', 'DymensionDuck', 'EigenEel', 'FuelFox', 'HytopiaHawk', 'InjectiveIbis', 'JunoJaguar', 'KavaKoi', 'LunaLion', 'MaticMoose', 'NeonNarwhal', 'OsmosisOwl', 'PhoenixPanda', 'QuasarQuokka', 'RuneRaven', 'SeiSeal', 'ThorTiger', 'UmeeUrial', 'VegaViper', 'WaxWolf', 'XRPXerus', 'YieldYak', 'ZilliqaZebra', 'AcalaApe', 'BobaBear', 'CronosCrab'];
+
+      function getRandomAmount() {
+        const min = 50.00,
+          max = 185000.00;
+        const raw = min + Math.random() * (max - min);
+        return raw.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
+      function getRandomFlag() { return countryFlags[Math.floor(Math.random() * countryFlags.length)]; }
+
+      function getRandomUsername() { return usernames[Math.floor(Math.random() * usernames.length)]; }
+
+      function dismissToast(toast, fadeTimeout) { if (fadeTimeout) clearTimeout(fadeTimeout); if (toast && toast.parentNode) { toast.classList.add('fade-out'); toast.addEventListener('transitionend', () => { if (toast && toast.parentNode) toast.remove(); }, { once: true }); setTimeout(() => { if (toast && toast.parentNode) toast.remove(); }, 600); } }
+
+      function showNotification() {
+        const amount = getRandomAmount();
+        const flag = getRandomFlag();
+        const username = getRandomUsername();
+        const message = `${username} earned $${amount}`;
+        const toast = document.createElement('div');
+        toast.className = 'comic-toast fade-in';
+        toast.innerHTML = `<div class="toast-flag">${flag}</div><div class="toast-message"><strong>${message}</strong></div><button class="toast-close" aria-label="Close">✕</button>`;
+        container.appendChild(toast);
+        const fadeTimeout = setTimeout(() => { dismissToast(toast, null); }, 12000);
+        const closeBtn = toast.querySelector('.toast-close');
+        if (closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation();
+          dismissToast(toast, fadeTimeout); });
+      }
+      setTimeout(() => { showNotification(); }, 3000);
+      setInterval(() => { showNotification(); }, 20000);
+    })();
+  </script>
+</body>
+</html>

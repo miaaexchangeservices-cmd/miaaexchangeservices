@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MiaaExchange Services - FAQ | Crypto Exchange & Bonuses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========== ORANGE · BLACK · WHITE DESIGN ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html, body {
+            background: transparent;
+            height: 100%;
+        }
+
+        body {
+            background: transparent;
+            color: #000000;
+            line-height: 1.6;
+            padding-bottom: 100px;
+            position: relative;
+        }
+
+        /* ========== NAVIGATION (white/black) ========== */
+        nav {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 20px;
+        }
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #f57c00;   /* orange */
+        }
+        nav a.current-page {
+            color: #f57c00 !important;
+            text-decoration: underline !important;
+        }
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        /* ========== HEADER (white) ========== */
+        header {
+            text-align: center;
+            padding: 40px;
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            z-index: 5;
+        }
+        
+        header h1 {
+            font-size: 32px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        header p {
+            max-width: 800px;
+            margin: 15px auto;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #000000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .main-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #ffffff;
+            border-bottom: 2px solid #f57c00; /* orange */
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #f57c00; /* orange */
+            text-shadow: none;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #000000;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        @media (max-width: 900px) {
+            .faq-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .faq-section {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: #f57c00; /* orange */
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        
+        .faq-question {
+            color: #000000;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .faq-question:hover {
+            color: #f57c00; /* orange */
+        }
+        
+        .faq-answer {
+            color: #000000;
+            padding-left: 20px;
+        }
+        
+        .highlight {
+            color: #f57c00; /* orange */
+            font-weight: 600;
+        }
+        
+        .bonus-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .bonus-table th, .bonus-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+            color: #000000;
+        }
+        
+        .bonus-table th {
+            background-color: #f8f8f8;
+            color: #000000;
+            font-weight: 700;
+        }
+        
+        .bonus-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .bonus-table tr:hover {
+            background-color: #fff2e0; /* light orange tint */
+        }
+        
+        .guide-container {
+            background: #fefefe;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.03);
+        }
+        
+        .guide-step {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .guide-step i {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #f57c00; /* orange */
+            font-size: 1.2rem;
+        }
+        
+        .guide-step-title {
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 16px 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 0.9rem;
+            z-index: 100;
+            border-top: 1px solid #ddd;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: #f57c00; /* orange */
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-button:hover {
+            background: #e65100; /* darker orange */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f57c00; /* orange */
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #000000;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .advantages-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .advantages-list li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+        
+        .advantages-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .faq-answer span.highlight {
+            color: #f57c00; /* orange */
+        }
+        .guide-container p, .guide-step p {
+            color: #000000;
+        }
+        .bonus-table td {
+            color: #000000;
+        }
+        p, li, .faq-answer, .subtitle, header p {
+            color: #000000;
+        }
+
+        /* ---------- BACKGROUND IMAGE & OVERLAY (alpha 0.4) ---------- */
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        .bg-image img {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        nav, header, .container, footer {
+            position: relative;
+            z-index: 5;
+        }
+        
+        .faq-answer {
+            transition: 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== BACKGROUND IMAGE & OVERLAY ========== -->
+<div class="bg-image">
+    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Office background">
+</div>
+<div class="overlay"></div>
+
+<!-- ========== NAVIGATION ========== -->
+<nav>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="exchange.html">Exchange</a>
+        <a href="index.html#contact">Contact Us</a>
+        <a href="faq.html" class="current-page">Faq</a>
+    </div>
+</nav>
+
+<!-- ========== FAQ HEADER ========== -->
+<header>
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about our services, earnings, bonuses, and how to get started with cryptocurrency mining and exchange.</p>
+</header>
+
+<!-- ========== MAIN FAQ CONTENT ========== -->
+<div class="container">
+    <div class="faq-container">
+        <div class="faq-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> About MiaaExchange</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What is MiaaExchange Services?</h3>
+                <p class="faq-answer">MiaaExchange Services, is a platform to earn money online through cryptocurrency exchange. Transactions are processed in few minutes, and profits are credited within  5 to 10 minutes. While other platforms make you wait days or weeks, we guarantee quick, smooth, and reliable payouts — that's why we're ranked among the world's leading e-currency exchangers.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How does MiaaExchange make money?</h3>
+                <p class="faq-answer">Our revenue model is based on facilitating currency exchanges. We are connected to top-tier e-currency mining companies that require a constant flow of specific digital currencies. When you use our platform to make an exchange, a small portion of the transaction profit is shared with us by these partners. We, in turn, share a part of that profit with you. This creates a sustainable win-win ecosystem for all parties involved.</p>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="section-title"><i class="fas fa-play-circle"></i> Getting Started & Earning</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Is MiaaExchange Services right for me?</h3>
+                <p class="faq-answer">MiaaExchange is designed for anyone looking to earn money online. A key advantage is that you retain control of your initial funds in your own external wallet (Bitcoin). You only use our platform to perform exchanges, and earnings are distributed based on your exchange activity.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How much can I earn daily?</h3>
+                <p class="faq-answer">Your daily earnings are directly tied to the volume and size of your exchanges. The platform is designed to offer higher returns on larger exchanges.</p>
+                <p class="faq-answer"><span class="highlight">Example:</span> An exchange of $100 yields a return of $125.</p>
+                <p class="faq-answer">There is no daily limit on the number of exchanges you can perform. To maximize your initial profit, we recommend starting with a higher exchange amount to qualify for our first-time bonus.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What are the exchange limits?</h3>
+                <p class="faq-answer">The minimum exchange amount is <span class="highlight">$50</span>. The maximum exchange limit is <span class="highlight">$50,000</span>.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Do I need to register?</h3>
+                <p class="faq-answer">No, need to register.</p>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="section-title"><i class="fas fa-gift"></i> Bonuses & Profits</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">I heard about huge profits on the first exchange. Is this true?</h3>
+                <p class="faq-answer">Yes. We offer a one-time instant bonus for all first-time exchangers who meet a minimum threshold. This bonus is automatically added to your profit and sent to your receiving account.</p>
+                
+                <table class="bonus-table">
+                    <thead>
+                        <tr>
+                            <th>First Exchange Amount</th>
+                            <th>Instant Bonus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$150 - $200</td>
+                            <td><span class="highlight">$50</span></td>
+                        </tr>
+                        <tr>
+                            <td>$250 - $300</td>
+                            <td><span class="highlight">$80</span></td>
+                        </tr>
+                        <tr>
+                            <td>$350 - $400</td>
+                            <td><span class="highlight">$100</span></td>
+                        </tr>
+                        <tr>
+                            <td>$450 - $500</td>
+                            <td><span class="highlight">$150</span></td>
+                        </tr>
+                        <tr>
+                            <td>...up to $50,000</td>
+                            <td><span class="highlight">(Scales accordingly)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p class="faq-answer">Please note: This bonus is awarded only once per user. Creating multiple exchange as a first timer in order to enjoy bonus is prohibited and will not result in additional bonuses.</p>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Transactions & Security</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How fast are withdrawals?</h3>
+                <p class="faq-answer">Earnings from exchanges are processed and sent to your designated receiving account instantly, typically in less than 10 minutes.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What currencies do you support?</h3>
+                <p class="faq-answer">We currently support exchanges involving <span class="highlight">Bitcoin (BTC)</span>.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Can I use more than one account?</h3>
+                <p class="faq-answer">No. To ensure fairness for all users, only one account per individual and per IP address is permitted.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="guide-container">
+        <h2 class="section-title"><i class="fas fa-book"></i> Beginner's Guide to Setting Up a Bitcoin Wallet</h2>
+        <p class="faq-answer">A quick guide to get you started:</p>
+        
+        <div class="guide-step">
+            <i class="fas fa-1"></i>
+            <div class="guide-step-title">Choose a Wallet</div>
+            <p>Select a reputable wallet. Popular options include mobile apps (Trust Wallet, Exodus), exchanges (Coinbase, Binance), or ultra-secure hardware devices (Ledger, Trezor).</p>
+        </div>
+        
+        <div class="guide-step">
+            <i class="fas fa-2"></i>
+            <div class="guide-step-title">Create & Secure It</div>
+            <p>Download the app or sign up, then write down your 12-24 word recovery seed phrase. Store this offline in a safe place—it is the key to your funds. Enable 2-Factor Authentication (2FA).</p>
+        </div>
+        
+        <div class="guide-step">
+            <i class="fas fa-3"></i>
+            <div class="guide-step-title">Get Your Address</div>
+            <p>Inside your wallet, find the "Receive" function to generate your unique public address (it will look like a long string of letters and numbers). This is what you share to receive Bitcoin.</p>
+        </div>
+        
+        <div class="guide-step">
+            <i class="fas fa-4"></i>
+            <div class="guide-step-title">Buy Bitcoin</div>
+            <p>You can purchase Bitcoin using a credit/debit card or bank transfer on exchanges like Coinbase, Binance, or Kraken. You can also use Bitcoin ATMs or peer-to-peer platforms.</p>
+        </div>
+        
+        <div class="guide-step">
+            <i class="fas fa-5"></i>
+            <div class="guide-step-title">Store Safely</div>
+            <p>Never share your seed phrase. For large amounts, transfer funds from an exchange to your personal wallet for added security.</p>
+        </div>
+        
+        <p class="faq-answer">For funding your account, you can search for "Bitcoin vendors" or "exchangers" in your local region to find a trusted provider.</p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <p>Need more assistance? Our support team is here to help you.</p>
+        <a href="index.html#contact" class="contact-button">Contact Support</a>
+    </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    Miaaexchange Services ©2012-2026
+</footer>
+
+<!-- Simple JavaScript to toggle FAQ answers -->
+<script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        const answer = question.nextElementSibling;
+        if (answer && answer.classList && answer.classList.contains('faq-answer')) {
+            answer.style.display = 'block';
+        }
+        question.addEventListener('click', (e) => {
+            const ans = question.nextElementSibling;
+            if (ans && ans.classList && ans.classList.contains('faq-answer')) {
+                if (ans.style.display === 'none') {
+                    ans.style.display = 'block';
+                } else {
+                    ans.style.display = 'none';
+                }
+            }
+        });
+    });
+    
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.faq-answer').forEach(ans => {
+            if (ans.style.display !== 'none') {
+                ans.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

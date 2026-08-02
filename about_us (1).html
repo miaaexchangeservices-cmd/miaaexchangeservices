@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>About Miaaexchange Services | Digital Asset Ecosystem</title>
+  <style>
+    /* ========== GLOBAL STYLES (from index.html) ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fullscreen background image (same as index) */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      position: relative;
+      padding-bottom: 100px;
+      min-height: 100vh;
+      background: transparent;
+      scroll-behavior: smooth;
+    }
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .bg-image img {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* All content sits above background */
+    nav, .about-container, footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ========== NAVIGATION (logo removed, original design preserved) ========== */
+    nav {
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(4px);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.2s;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ff8c00; /* orange */
+    }
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    /* ========== ABOUT CONTENT (original design) ========== */
+    .about-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(2px);
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    }
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .about-header h1 {
+      font-size: 36px;
+      color: #111;
+      margin-bottom: 15px;
+      display: inline-block;
+      border: 1px solid #ff8c00; /* orange */
+      border-radius: 50%;
+      padding: 20px 35px;
+      background: transparent;
+      line-height: 1.2;
+      text-align: center;
+      box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.1);
+    }
+    @media (max-width: 600px) {
+      .about-header h1 {
+        font-size: 28px;
+        padding: 15px 22px;
+      }
+    }
+    .about-header p {
+      font-size: 18px;
+      color: #222;
+      max-width: 800px;
+      margin: 25px auto 0 auto;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .about-header p + p {
+      margin-top: 20px;
+    }
+
+    .about-section {
+      margin-bottom: 40px;
+    }
+    .about-section h2 {
+      font-size: 26px;
+      color: #111;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #ff8c00; /* orange */
+      padding-bottom: 10px;
+    }
+    .about-section p {
+      font-size: 16px;
+      color: #222;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .about-section p:last-of-type {
+      margin-bottom: 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+    }
+    .feature-box {
+      background: #fef9f0; /* soft orange-white */
+      padding: 18px 20px;
+      border-radius: 12px;
+      border-left: 4px solid #ff8c00; /* orange */
+      transition: all 0.2s ease;
+    }
+    .feature-box strong {
+      font-size: 18px;
+      color: #000;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .feature-box:hover {
+      background: #ffffff;
+      box-shadow: 0 6px 14px rgba(255, 140, 0, 0.08);
+      transform: translateY(-1px);
+    }
+
+    /* ========== FOOTER (updated with 2012-2026 range) ========== */
+    footer {
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(4px);
+      color: #eee;
+      text-align: center;
+      padding: 16px 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 0.9rem;
+      z-index: 100;
+      border-top: 1px solid #ff8c00; /* subtle orange line */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background image + overlay (same as index) -->
+<div class="bg-image">
+  <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Office background">
+</div>
+<div class="overlay"></div>
+
+<!-- ========== NAVIGATION (logo removed, only nav-links remain) ========== -->
+<nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about_us.html">About Us</a>
+    <a href="exchange.html">Exchange</a>
+    <!-- Contact Us now redirects to homepage index.html -->
+    <a href="index.html">Contact Us</a>
+    <a href="faq.html">Faq</a>
+  </div>
+</nav>
+
+<!-- ========== ABOUT CONTENT ========== -->
+<div class="about-container">
+  <div class="about-header">
+    <h1>About Miaaexchange Services</h1>
+    <!-- Example two applied: split into two paragraphs with blank line -->
+    <p>Miaaexchange Services is a globally recognized digital asset platform delivering secure cryptocurrency exchange, institutional‑grade cloud mining, and enterprise blockchain infrastructure.</p>
+    <p>We combine cutting‑edge technology, regulatory foresight, and transparent operations to empower users worldwide — from first‑time investors to large‑scale mining operators.</p>
+  </div>
+
+  <div class="about-section">
+    <h2>Cutting-Edge Infrastructure</h2>
+    <!-- Example one applied: split into two paragraphs with blank line -->
+    <p>We leverage high-performance ASIC (Antminer S21, M60 series) and NVIDIA H100 GPU mining rigs deployed across industrial-scale, Tier III data centers with redundant power and immersion cooling. Our cloud mining platform and exchange matching engine operate on a low-latency distributed architecture, processing millions of orders per second while maintaining 99.95% uptime.</p>
+    <p>Combined with multi-layer cold storage and real-time threat monitoring, users benefit from both mining efficiency and secure, instant asset management under one roof.</p>
+  </div>
+
+  <div class="about-section">
+    <h2>Why Choose Us?</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <strong>99.95% Uptime</strong>
+        Reliable hashpower and exchange availability with automated failover systems.
+      </div>
+      <div class="feature-box">
+        <strong>Instant Deposits & Settlements</strong>
+        Fast crypto/fiat transactions and automated daily mining payouts.
+      </div>
+      <div class="feature-box">
+        <strong>High-Efficiency Equipment</strong>
+        State-of-the-art ASIC/GPU miners optimized for maximum ROI and lower energy costs.
+      </div>
+      <div class="feature-box">
+        <strong>24/7 Multilingual Support</strong>
+        Dedicated technical and account assistance with rapid response SLAs.
+      </div>
+      <div class="feature-box">
+        <strong>Transparent Operations</strong>
+        Verified mining statistics, on-chain payouts, and real-time dashboard.
+      </div>
+      <div class="feature-box">
+        <strong>Risk-Aware Cloud Mining</strong>
+        Flexible contracts, no hidden fees, and optional hashrate protection plans.
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <h2>Leadership & Management</h2>
+    <p>Our leadership team combines decades of expertise in global finance, energy infrastructure, cybersecurity, and blockchain engineering.</p>
+    <p>We uphold the highest standards of corporate governance, ESG alignment, and investor-focused innovation.</p>
+    <p>Through continuous R&D and strategic partnerships with hardware manufacturers and renewable energy providers, Miaaexchange Services remains committed to delivering sustainable, scalable, and trustworthy digital asset solutions for a global audience.</p>
+  </div>
+</div>
+
+<!-- ========== FOOTER (updated with ©2012-2026) ========== -->
+<footer>
+  Miaaexchange Services ©2012-2026
+</footer>
+
+</body>
+</html>
